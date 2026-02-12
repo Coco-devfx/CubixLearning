@@ -24,6 +24,7 @@ body::before {
     width: auto;
     height: auto;
     position: relative;
+    border: solid #95dac8 7px;
     background-color: transparent;
     margin: 20px;
 }
