@@ -81,10 +81,6 @@ header h1 {
     background-color: #c472ae;
 }
 
-main {
-    margin-left: 240px;
-}
-
 #menu {
     display: flex;
     flex-direction: column;
