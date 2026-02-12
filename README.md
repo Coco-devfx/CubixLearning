@@ -12,7 +12,7 @@ On a choisi ce sujet notamment parce que de nos jours, tout s'informatise et qu'
 ## 👥 L'Équipe
 
 - BOUDJEMA Anis (Nissou17) : Responsable Flask et du suivi de projet
-- CERUTTI Alicia (@pseudo_git) : Responsable Flask, CSS
+- CERUTTI Alicia (aliciacer) : Responsable Flask, CSS
 - DELCROIX Corentin (Coco_devfx) : Chef de projet et developpeur CSS, HTML
 
 ## 🛠️ Aspects Techniques (Spécificités NSI)
