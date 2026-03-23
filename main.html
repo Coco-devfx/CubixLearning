@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CubixLearning - Accueil</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <script>
+        function searchGoogle() {
+            const searchInput = document.getElementById('search-input').value;
+            if (searchInput.trim() !== '') {
+                window.open('https://www.google.com/search?q=' + encodeURIComponent(searchInput), '_blank');
+            } else {
+                alert('Veuillez entrer un terme de recherche');
+            }
+        }
+        function handleSearchEnter(event) {
+            if (event.key === 'Enter') {
+                searchGoogle();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main-zone">
+        <header>
+            <h1 id="title">Bienvenue chez CubixLearning</h1> 
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Rechercher via Google..." onkeypress="handleSearchEnter(event)">
+                <button class="SearchBtn" onclick="searchGoogle()">🍀​</button>
+            </div>
+        </header>
+
+        <div class="secondary-zone">
+        
+            <section id="menu">
+                <nav>
+                    <ul>
+                        
+                        <li><a href="#" onclick="openAccount(); return false;" id="account">Se connecter</a></li>
+                        <li><a href="#" onclick="logout(); return false;" id="logout">Déconnexion</a></li>
+                        <li><a href="#lessons" id="lessons">Leçons</a></li>
+                        <li><a href="#about" id="aboutMenu">À propos</a></li>
+                        <li><a href="#contact" id="contactMenu">Contact</a></li>
+                        <li><a href="#" onclick="changeLanguage('fr')">🇫🇷 Français</a></li>
+                        <li><a href="#" onclick="changeLanguage('en')">🇬🇧 English</a></li>
+                        <li><a href="#" onclick="toggleTextSize(); return false;" id="Text"> Taille Texte</a>
+                            <div id="textSizeControl" style="display:none; margin-top:10px; margin-left: -20px;">
+                                <input type="range" min="14" max="30" value="16" onchange="changeTextSize(this.value)">
+                            </div>
+                        </li>
+                        
+                        <!--<button onclick="window.location.href='main_en.html'">English</button>
+                        <li><a href="">Langues </a></li> 
+                        <li><a href="" id="Text">Taille Texte</a></li> -->
+
+                        
+                    </ul>
+                </nav>
+            </section>
+
+            <div class="third-zone">
+
+                    <section id="about">
+                        <h2 id="aboutTitle"> À propos de CubixLearning</h2>
+                        <p  id="aboutText"> Bienvenue. Ce site a été conçu pour vous aider à mieux comprendre et utiliser le numérique au quotidien, 
+                            pas à pas et sans stress. Ici, vous apprenez à réaliser des actions concrètes (envoyer un document, 
+                            reconnaître un message suspect, utiliser un service en ligne), avec des explications simples et un accompagnement permanent. 
+                            Vous pouvez prendre votre temps, recommencer autant que nécessaire, et vous faire aider à chaque étape.
+                        </p>
+                    </section>
+
+                    <div class="cards-container">
+                        <a href="./Page1.html" class="card-link">
+                            <div class="card">
+                                <img src="../images/6b9bf36bcc6f4192f94fb354e2e0bf2d.jpg" alt="Smartphone" class="card-icon">
+                                <h4 id="card1" > 1 - Enseignement orienté smartphone</h4>
+                            </div>
+                        </a>
+                        
+                        <a href="./Page2.html" class="card-link">
+                            <div class="card">
+                                <img src="../images/ab6c7ecf5313d1e07c3d6495d468e6ca.jpg" alt="Ordinateur" class="card-icon">
+                                <h4 id="card2" >2 - Enseignement orienté ordinateur</h4>
+                            </div>
+                        </a>
+
+                        <a href="./Page3.html" class="card-link">
+                            <div class="card">
+                                <img src="../images/286231b2a6f478e8032b32a4339cc19d.jpg" alt="Dépannage" class="card-icon">
+                                <h4 id="card3" >3 - Comment dépanner des petits problèmes techniques ?</h4>
+                            </div>
+                        </a>
+
+                        <a href="./Page4.html" class="card-link">
+                            <div class="card">
+                                <img src="../images/1a3e483836f07bbc7357bcec88d1bd08.jpg" alt="Sécurité" class="card-icon">
+                                <h4 id="card4" >4 - Comment ne pas se faire arnaquer en ligne ?</h4>
+                            </div>
+                        </a>
+                    </div>
+
+                <section id="contact">
+                    <h2 id="contactTitle">Contactez-nous</h2>
+                    <p id="contactText">Pour toute question ou demande, n'hésitez pas à nous contacter.
+                      Contactez-nous à l'adresse email : cubixlearningdev@gmail.com
+                    </p>
+                </section>
+
+                <footer>
+                    <p  id="footerText" >&copy; 2026 CubixLearning. Tous droits réservés.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <button id="topBtn" onclick="scrollToTop()">⬆️</button>
+
+    <script src="../Javascript/script_2.js"></script>
+
+   
+    
+
+
+
+    
+    
+    <div id="accountBox" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border-radius:10px;">
+        <h3>Créer un compte</h3>
+        <input type="text" id="username" placeholder="Votre nom">
+        <button onclick="saveAccount()">Valider</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+</body>
+</html>
+
