@@ -276,3 +276,35 @@ cursor: pointer;
 #accountBox button:hover {
     background-color: #c472ae;
 }
+
+#assistant{
+    position: fixed;
+    bottom: 50px;
+    left: 0px;
+    display: flex;
+    align-items: flex-end;
+}
+
+#mascotte {
+    width: 120px;
+}
+
+#assistant-box{
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 200px;
+    /* margin-left: 10px; */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.highlight{
+    outline: 8px solid orange;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse{
+    0%{outline-color: orange;}
+    50%{outline-color: red;}
+    100%{outline-color: orange;}
+}
