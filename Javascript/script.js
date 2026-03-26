@@ -78,12 +78,12 @@ localStorage.setItem("language", lang);
 
 if(lang === "en"){
     document.getElementById("title").textContent = "Welcome to CubixLearning";
-    document.getElementById("account").textContent = "Login";
+    document.getElementById("signup").textContent = "Login";
     document.getElementById("logout").textContent = "Logout";
     document.getElementById("lessons").textContent = "Lessons";
     document.getElementById("aboutMenu").textContent = "About";
     document.getElementById("contactMenu").textContent = "Contact";
-    document.getElementById("Text").textContent = "Text size";
+    document.getElementById("taille-texte").textContent = "Text size";
     document.getElementById("search-input").placeholder = "Search with Google...";
     document.getElementById("aboutTitle").textContent = "About CubixLearning";
     document.getElementById("aboutText").textContent = "Welcome. This website was created to help you better understand and use digital tools in your daily life,step by step and without stress. Here, you will learn how to perform practical actions (sending a document, recognizing a suspicious message, using an online service), with simple explanations and continuous guidance. You can take your time, start again as many times as necessary, and get help at every step.";
@@ -98,12 +98,12 @@ if(lang === "en"){
 
 if(lang === "fr"){
     document.getElementById("title").textContent = "Bienvenue chez CubixLearning";
-    document.getElementById("account").textContent = "Se connecter";
+    document.getElementById("signup").textContent = "Se connecter";
     document.getElementById("logout").textContent = "Déconnexion";
     document.getElementById("lessons").textContent = "Leçons";
     document.getElementById("aboutMenu").textContent = "À propos";
     document.getElementById("contactMenu").textContent = "Contact";
-    document.getElementById("Text").textContent = "Taille Texte";
+    document.getElementById("taille-texte").textContent = "Taille Texte";
     document.getElementById("search-input").placeholder = "Rechercher via Google...";
     document.getElementById("aboutTitle").textContent = "À propos de CubixLearning";
     document.getElementById("aboutText").textContent ="Bienvenue. Ce site a été conçu pour vous aider à mieux comprendre et utiliser le numérique au quotidien, pas à pas et sans stress. Ici, vous apprenez à réaliser des actions concrètes (envoyer un document, reconnaître un message suspect, utiliser un service en ligne), avec des explications simples et un accompagnement permanent. Vous pouvez prendre votre temps, recommencer autant que nécessaire, et vous faire aider à chaque étape.";
