@@ -26,6 +26,21 @@ def hash_password(password):
 def index():
     user = session.get("username")
     return render_template("main.html", user=user)
+@app.route("/page1")
+def page1():
+    return render_template("Page1.html")
+@app.route("/page2")
+def page2():
+    return render_template("Page2.html")
+
+@app.route("/page3")
+def page3():
+    return render_template("Page3.html")
+
+@app.route("/page4")
+def page4():
+    return render_template("Page4.html")
+
 
 @app.route("/register", methods=["POST"])
 def register():

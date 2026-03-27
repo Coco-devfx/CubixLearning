@@ -158,7 +158,7 @@ function resetAssistant() {
 function startInterfaceTour() {
     const steps = [
         { id: "search-bar", message: "Voici la barre de recherche Google. Cette dernière permet de vérifier des informations sur internet, ou même pour les plus motivés, à tester notre apprentissage en situation réelle ! - Vous pouvez soit cliquer sur le 🍀, soit en appuyent sur la touche Entrée ou Enter (des fois flèche brisée vers la gauche)" },
-        { id: "signup",     message: "Pour sauvegarder votre progression dans le cours, vous pouvez vous connecter ou créer un compte via le bouton Compte " },
+        { id: "signup",     message: "Pour sauvegarder votre progression dans le cours, vous pouvez vous connecter ou créer un compte via le bouton Compte. Si vous n'avez pas de compte appuyer sur 'Créer un compte' en bas " },
         { id: "langues",    message: "Pour les plus bilingues d'entre vous, ce bouton permet de changer la langue du site." },
         { id: "taille-texte", message: "Si vous avez du mal à voir, pas de panique ! Ce bouton ajuste la taille du texte." },
         { id: "card1", message: "Voici le premier cours, il vous permettra de comprendre l'interface, les différeentes applications comment envoyer des messages etc" },
