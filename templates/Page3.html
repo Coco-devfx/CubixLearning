@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module Ordinateur - CubixLearning</title>
+    <title>Module Dépannage - CubixLearning</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style/styles.css') }}">
 </head>
 <body>
     <div class="main-zone">
         <header>
             <img src="{{ url_for('static', filename='images/Felix.jpg') }}" alt="Logo" style="width: 50px; border-radius: 50%;">
-            <h1>2 - Module Ordinateur</h1>
+            <h1>3 - Module Dépannage</h1>
         </header>
 
         <div class="secondary-zone">
@@ -19,7 +19,7 @@
                     <ul>
                         <li><a href="/">Accueil</a></li>
                         <li><a href="/page1">Smartphone</a></li>
-                        <li><a href="/page3">Dépannage</a></li>
+                        <li><a href="/page2">Ordinateur</a></li>
                         <li><a href="/page4">Sécurité</a></li>
                     </ul>
                 </nav>
@@ -27,12 +27,12 @@
 
             <div class="third-zone">
                 <div id="about">
-                    <h2>💻 Quiz Ordinateur</h2>
-                    <p>Apprenez à gérer vos fichiers et à utiliser les outils de base d'un PC.</p>
+                    <h2>🔧 Quiz Dépannage</h2>
+                    <p>Que faire quand rien ne marche ? Apprenez les bons réflexes.</p>
                 </div>
 
                 <div class="cards-container" style="display: block; text-align: center; padding: 40px;">
-                    <button class="btn-quiz" onclick="startQuiz()" style="background: #3498db; color: white; padding: 15px 30px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 1.1em;">🚀 Lancer le Quiz</button>
+                    <button class="btn-quiz" onclick="startQuiz()" style="background: #e67e22; color: white; padding: 15px 30px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 1.1em;">🚀 Lancer le Quiz</button>
 
                     <div id="quiz" style="display: none; background: white; color: black; padding: 20px; border-radius: 15px; margin-top: 20px; text-align: left; border: 3px solid #95dac8;">
                         <div id="question-text" style="font-weight: bold; margin-bottom: 10px; color: #2c3e50;"></div>
@@ -51,14 +51,9 @@
     <script>
         const questions = [
             {
-                q: "Quel raccourci clavier permet de copier un texte ?",
-                options: ["Ctrl + V", "Ctrl + C", "Alt + F4"],
+                q: "Si un logiciel bugue, quel est le premier réflexe ?",
+                options: ["Jeter l'ordinateur", "Redémarrer l'application ou l'appareil", "Appeler la police"],
                 correct: 1
-            },
-            {
-                q: "Où vont les fichiers que vous supprimez ?",
-                options: ["Dans la corbeille", "Sur Internet", "Ils disparaissent à jamais"],
-                correct: 0
             }
         ];
         let currentQ = 0;

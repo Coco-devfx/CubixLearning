@@ -1,136 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CubixLearning - Accueil</title>
-    <link rel="stylesheet" href="../style/styles.css">
-    <script>
-        function searchGoogle() {
-            const searchInput = document.getElementById('search-input').value;
-            if (searchInput.trim() !== '') {
-                window.open('https://www.google.com/search?q=' + encodeURIComponent(searchInput), '_blank');
-            } else {
-                alert('Veuillez entrer un terme de recherche');
-            }
-        }
-        function handleSearchEnter(event) {
-            if (event.key === 'Enter') {
-                searchGoogle();
-            }
-        }
-    </script>
+    <title>Quiz Smartphone - CubixLearning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/styles.css') }}">
 </head>
-
 <body>
     <div class="main-zone">
         <header>
-            <h1 id="title">Bienvenue chez CubixLearning</h1> 
-            <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Rechercher via Google..." onkeypress="handleSearchEnter(event)">
-                <button class="SearchBtn" onclick="searchGoogle()">🍀​</button>
-            </div>
+            <img src="{{ url_for('static', filename='images/Felix.jpg') }}" alt="Logo" style="width: 50px; border-radius: 50%;">
+            <h1>1 - Module Smartphone</h1>
         </header>
 
         <div class="secondary-zone">
-        
-            <section id="menu">
+            <div id="menu">
                 <nav>
                     <ul>
-                        
-                        <li><a href="" id="account">Se connecter</a></li>
-                        <li><a href="./main.html" id="courses">Accueil</a></li>
-                        <li><a href="#about" id="aboutMenu">À propos</a></li>
-                        <li><a href="#contact" id="contactMenu">Contact</a></li>
-                        <li><a href="#" onclick="changeLanguage('fr')">🇫🇷 Français</a></li>
-                        <li><a href="#" onclick="changeLanguage('en')">🇬🇧 English</a></li>
-                        <li><a href="#" onclick="toggleTextSize(); return false;" id="Text"> Taille Texte</a>
-                            <div id="textSizeControl" style="display:none; margin-top:10px; margin-left: -20px;">
-                                <input type="range" min="14" max="30" value="16" onchange="changeTextSize(this.value)">
-                            </div>
-                        </li>
-                        
-                        
-                        
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/page2">Ordinateur</a></li>
+                        <li><a href="/page3">Dépannage</a></li>
+                        <li><a href="/page4">Sécurité</a></li>
                     </ul>
                 </nav>
-            </section>
+            </div>
 
             <div class="third-zone">
+                <div id="about">
+                    <h2>📱 Quiz Smartphone</h2>
+                    <p>Testez vos connaissances sur l'utilisation du téléphone portable.</p>
+                </div>
 
-                
+                <div class="cards-container" style="display: block; text-align: center; padding: 40px;">
+                    <button class="btn-quiz" onclick="startQuiz()" style="background: #ffcc00; color: #2c3e50; padding: 15px 30px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 1.1em;">🚀 Lancer le Quiz</button>
 
-                <section id="contact">
-                    <h2 id="contactTitle">Contactez-nous</h2>
-                    <p id="contactText">Pour toute question ou demande, n'hésitez pas à nous contacter.
-                      Contactez-nous à l'adresse email : cubixlearningdev@gmail.com
-                    </p>
-                </section>
+                    <div id="quiz" style="display: none; background: white; color: black; padding: 20px; border-radius: 15px; margin-top: 20px; text-align: left; border: 3px solid #95dac8;">
+                        <div id="question-text" style="font-weight: bold; margin-bottom: 10px; color: #2c3e50;"></div>
+                        <div id="options"></div>
+                        <p id="feedback" style="margin-top:10px; font-weight:bold;"></p>
+                    </div>
+                </div>
 
-                <footer>
-                    <p  id="footerText" >&copy; 2026 CubixLearning. Tous droits réservés.</p>
-                </footer>
+                <div id="contact">
+                    <a href="/" style="text-decoration: none; color: inherit; font-weight: bold;">⬅ Retour à l'accueil</a>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
+        const questions = [
+            {
+                q: "Comment utiliser votre téléphone pour connecter votre ordinateur à internet ?",
+                options: ["Activer le partage de connexion", "Mettre le mode avion", "Éteindre le téléphone"],
+                correct: 0
+            },
+            {
+                q: "Vous envoyez un message privé sur Facebook. Qui peut le voir ?",
+                options: ["Tout le monde", "Seulement le destinataire", "Tous mes amis"],
+                correct: 1
+            },
+            {
+                q: "Comment scanner un QR Code au restaurant ?",
+                options: ["Prendre une photo normale", "Viser le code avec l'appareil photo", "Taper le nom sur Google"],
+                correct: 1
+            }
+        ];
 
-    function changeLanguage(lang){
+        let currentQ = 0;
 
-    localStorage.setItem("language", lang);   
+        function startQuiz() {
+            document.querySelector('.btn-quiz').style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+            showQuestion();
+        }
 
-    if(lang === "en"){
-    document.getElementById("title").textContent = "Welcome to CubixLearning";
-    document.getElementById("account").textContent = "Login";
-    document.getElementById("courses").textContent = "Home page";
-    document.getElementById("aboutMenu").textContent = "About";
-    document.getElementById("contactMenu").textContent = "Contact";
-    document.getElementById("Text").textContent = "Text size";
-    document.getElementById("search-input").placeholder = "Search with Google...";
-    document.getElementById("contactTitle").textContent = "Contact us";
-    document.getElementById("contactText").textContent ="For any question or request, feel free to contact us at: cubixlearningdev@gmail.com";
-    document.getElementById("footerText").textContent ="© 2026 CubixLearning. All rights reserved.";
-    }
+        function showQuestion() {
+            const q = questions[currentQ];
+            document.getElementById('question-text').innerText = q.q;
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+            
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement('div');
+                btn.style = "background: #f0f0f0; margin: 5px 0; padding: 10px; border-radius: 5px; cursor: pointer;";
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(index);
+                optionsDiv.appendChild(btn);
+            });
+        }
 
-    if(lang === "fr"){
-    document.getElementById("title").textContent = "Bienvenue chez CubixLearning";
-    document.getElementById("account").textContent = "Se connecter";
-    document.getElementById("courses").textContent = "Accueil";
-    document.getElementById("aboutMenu").textContent = "À propos";
-    document.getElementById("contactMenu").textContent = "Contact";
-    document.getElementById("Text").textContent = "Taille Texte";
-    document.getElementById("search-input").placeholder = "Rechercher via Google...";
-    document.getElementById("contactTitle").textContent = "Contactez-nous";
-    document.getElementById("contactText").textContent = "Pour toute question ou demande, n'hésitez pas à nous contacter. Contactez-nous à l'adresse email : cubixlearningdev@gmail.com";
-    document.getElementById("footerText").textContent ="© 2026 CubixLearning. Tous droits réservés.";
-
-    }
-
-    }
-
+        function checkAnswer(index) {
+            const feedback = document.getElementById('feedback');
+            if(index === questions[currentQ].correct) {
+                feedback.innerText = "✅ Bravo !";
+                feedback.style.color = "green";
+                setTimeout(() => {
+                    currentQ++;
+                    if(currentQ < questions.length) {
+                        feedback.innerText = "";
+                        showQuestion();
+                    } else {
+                        document.getElementById('quiz').innerHTML = "<h2>🎉 Quiz terminé !</h2>";
+                    }
+                }, 1500);
+            } else {
+                feedback.innerText = "❌ Réessayez !";
+                feedback.style.color = "red";
+            }
+        }
     </script>
-    
-    <script>
-    
-
-    window.onload = function(){
-    let savedLanguage = localStorage.getItem("language");
-    if(savedLanguage){
-    changeLanguage(savedLanguage);
-    }
-
-    }
-
-    </script>
-
-    <button id="topBtn" onclick="scrollToTop()">⬆️</button>
-
-    
-    
- 
-
-
 </body>
 </html>
