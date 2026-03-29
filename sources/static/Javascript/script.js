@@ -127,7 +127,7 @@ if (questions && text) {
         if (this.value === "motdepasse") {
             text.innerHTML = "Cliquez sur 'Mot de passe oublié'";
             highlight("forgot");
-            setTimeout(resetAssistant, 15000);
+            setTimeout(resetAssistant, 20000);
         } else if (this.value === "interface") {
             startInterfaceTour();
         } else {
@@ -161,10 +161,10 @@ function startInterfaceTour() {
         { id: "signup",     message: "Pour sauvegarder votre progression dans le cours, vous pouvez vous connecter ou créer un compte via le bouton Compte. Si vous n'avez pas de compte appuyer sur 'Créer un compte' en bas " },
         { id: "langues",    message: "Pour les plus bilingues d'entre vous, ce bouton permet de changer la langue du site." },
         { id: "taille-texte", message: "Si vous avez du mal à voir, pas de panique ! Ce bouton ajuste la taille du texte." },
-        { id: "card1", message: "Voici le premier cours, il vous permettra de comprendre l'interface, les différeentes applications comment envoyer des messages etc" },
-        { id: "card2", message: "Vient après, le second cours, il vous permettra de vous habituer à l'outil que vous utilisé actuellement, de comprendre les différentes possibilités et fonctionnalités etc" },
-        { id: "card3", message: "Ensuite, voici le troisième cours, il vous permettra de vous sortir de situation où vous pourriez vite panniquer en étant débutant, ou encore faire le beau devant vos proches ou collègues et devenir un technicien essentiel" },
-        { id: "card4", message: "Voici enfin le dernier cours proposé, il vous montrera qu'internet n'est pas tout le temps génial et que des personnes malveillantes peuvent vite arnaquer des personnes comme vous et même des fois des personnes expérimentées !" }
+        { id: "card1", message: "Voici le premier cours, il vous permettra de comprendre l'interface, les différentes applications comment envoyer des messages etc" },
+        { id: "card2", message: "Vient après, le second cours, il vous permettra de vous habituer à l'outil que vous utilisez actuellement, de comprendre les différentes possibilités et fonctionnalités etc" },
+        { id: "card3", message: "Ensuite, voici le troisième cours, il vous permettra de vous sortir de situation où vous pourriez vite paniquer en étant débutant, ou encore faire le beau devant vos proches ou collègues et devenir un technicien essentiel" },
+        { id: "card4", message: "Voici enfin le dernier cours proposé, il vous montrera qu'internet n'est pas tout le temps génial et que des personnes malveillantes peuvent vite arnaquer des personnes comme vous et même parfois des personnes expérimentées !" }
     ];
     let currentStep = 0;
     function nextStep() {
@@ -173,7 +173,7 @@ function startInterfaceTour() {
             highlight(step.id);
             text.innerHTML = step.message;
             currentStep++;
-            setTimeout(nextStep, 12000);
+            setTimeout(nextStep, 30000);
         } else {
             setTimeout(resetAssistant, 1000);
         }
